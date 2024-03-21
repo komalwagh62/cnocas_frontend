@@ -5,7 +5,11 @@
   "projects": {
     "frond-end": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -21,13 +25,23 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/assets",
               "src/favicon.ico",
-              "src/assets"
+              "src/manifest.json"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/assets/css/style.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/leaflet/dist/leaflet.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+
+              "./node_modules/leaflet/dist/leaflet.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -80,16 +94,28 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/assets",
               "src/favicon.ico",
-              "src/assets"
+              "src/manifest.json"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/assets/css/style.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/leaflet/dist/leaflet.js",
+             
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "24842ab1-4093-4040-8727-3f6f08eceed7"
   }
 }
